@@ -7,7 +7,7 @@ function App() {
   const [zoom, setZoom] = React.useState(50);
 
   React.useEffect(() => {
-    fetch("/sequence_small.gb")
+    fetch("/sequence.gb")
       .then((r) => r.text())
       .then((text) => {
         console.log("text decoded:", text);
@@ -23,7 +23,6 @@ function App() {
             <input
               type="text"
               onChange={(e) => {
-                console.log(parseInt(e.target.value));
                 setZoom(parseInt(e.target.value));
               }}
             ></input>
